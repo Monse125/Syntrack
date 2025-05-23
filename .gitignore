@@ -1,0 +1,4 @@
+docs_test/
+venv/
+.env/
+env/
