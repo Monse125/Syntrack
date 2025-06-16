@@ -27,9 +27,10 @@ Para garantizar compatibilidad con versiones antiguas de OpenL3 (0.4.x) es neces
 
 ## Requisitos
 
-- Python ≥ 3.9  
+- Python ≥ 3.11  
 - FFmpeg (en PATH) — lo usa MoviePy para extraer audio  
 - Paquetes: `openl3 librosa soundfile moviepy numpy scipy` etc, todo en requirements.txt
+
 Disclaimer: probado en Ubuntu 24.04.2 LTS
 
 ---
@@ -107,10 +108,32 @@ relativas funcionen (project-root/ en el esquema de arriba).
 
 ### Ejemplos de uso
 
-+ Primera ejecución — crea WAV y guarda embedding
-  ```bash
-  python sync.py --song-id clocks_coldplay --clip-num 4 --cache-studio-embed
-  ```
+1. **Primera ejecución — crea WAV y guarda embedding**
+    ```bash
+    python sync.py --song-id clocks_coldplay --clip-num 4 --cache-studio-embed
+    ```
+  - Extrae clips_youtube/clocks_coldplay_clip04.mp4 → wavs/clocks_coldplay_clip04.wav
+
+  - Calcula el embedding de cancion_estudio/clocks_coldplay.mp3 y lo guarda como: cancion_estudio/clocks_coldplay_openl3_512d_48000sr_0.1s.npz
+
+2. **Siguientes ejecuciones — reutiliza embedding y WAV**
+
+    ```bash
+    python sync.py --song-id clocks_coldplay --clip-num 5 --cache-studio-embed --no-extract
+    ```
+
+  - Salta la extracción (ya hay WAV)
+
+  - Carga el embedding desde .npz → mucho más rápido.
+
+3. **Recalcula y sobreescribe el embedding almacenado**
+    ```bash
+    python sync.py --song-id clocks_coldplay --refresh-studio-embed --cache-studio-embed
+    ```
+4. **Otra canción, de la cual no se tiene cache**
+    ```bash
+    python sync.py --song-id enemy_imagine_dragons --clip-num 7
+    ```
 
 ## Créditos
 Proyecto mantenido por la comunidad de Syntrack.
