@@ -3,6 +3,21 @@
 """
 Procesa todas las canciones y clips para generar embeddings para entrenamiento de IA.
 Estructura centralizada: embeddings/songs/ y embeddings/clips/
+
+embeddings/
+├── songs/
+│   ├── clocks_coldplay_openl3_512d_48000sr_0.1s.npz
+│   ├── enemy_imagine_dragons_openl3_512d_48000sr_0.1s.npz
+│   └── ...
+└── clips/
+    ├── clocks_coldplay/
+    │   ├── youtube_clip01.npz
+    │   ├── youtube_clip02.npz
+    │   ├── personal_clip01.npz
+    │   └── ...
+    └── enemy_imagine_dragons/
+        ├── youtube_clip01.npz
+        └── ...
 """
 
 from pathlib import Path
@@ -198,12 +213,12 @@ def main():
     print(f"💾 Embeddings en: {EMBEDDINGS_DIR.resolve()}")
     
     ## Encontrar todas las canciones
-    #songs = find_all_songs()
-    #if not songs:
-    #    sys.exit("❌ No se encontraron canciones en clips_syntrack/")
+    songs = find_all_songs()
+    if not songs:
+        sys.exit("❌ No se encontraron canciones en clips_syntrack/")
 
     # Test with just one song
-    songs = ["clocks_coldplay"]  # Instead of find_all_songs()
+    # songs = ["clocks_coldplay"]  # Instead of find_all_songs()
     
     print(f"\n📋 Canciones encontradas: {len(songs)}")
     for song in songs:
