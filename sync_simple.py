@@ -39,7 +39,7 @@ EMB_SIZE  = 512
 # -------------------- Rutas --------------------
 base_dir   = Path("clips_syntrack") / args.song_id
 studio_mp3 = base_dir / "cancion_estudio" / f"{args.song_id}.mp3"
-video_mp4  = base_dir / "clips_youtube"   / f"{args.song_id}_clip{args.clip_num:02d}.mp4"
+video_mp4  = base_dir / "clips_youtube"   / f"clip{args.clip_num:02d}.mp4"
 wav_dir    = base_dir / "clips_youtube"   / "wavs"
 clip_wav   = wav_dir / f"{args.song_id}_clip{args.clip_num:02d}.wav"
 
