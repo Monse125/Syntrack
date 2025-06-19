@@ -93,7 +93,7 @@ pip install -r requirements.txt
 
 ## Uso básico
 ```bash
-python sync.py [opciones]
+python extract_and_sync_simple_embedding.py [opciones]
 ```
 
 - --song-id	Carpeta/prefijo de la canción (default clocks_coldplay)
@@ -110,7 +110,7 @@ relativas funcionen (project-root/ en el esquema de arriba).
 
 1. **Primera ejecución — crea WAV y guarda embedding**
     ```bash
-    python sync.py --song-id clocks_coldplay --clip-num 4 --cache-studio-embed
+    python extract_and_sync_simple_embedding.py --song-id clocks_coldplay --clip-num 4 --cache-studio-embed
     ```
   - Extrae clips_youtube/clocks_coldplay_clip04.mp4 → wavs/clocks_coldplay_clip04.wav
 
@@ -119,7 +119,7 @@ relativas funcionen (project-root/ en el esquema de arriba).
 2. **Siguientes ejecuciones — reutiliza embedding y WAV**
 
     ```bash
-    python sync.py --song-id clocks_coldplay --clip-num 5 --cache-studio-embed --no-extract
+    python extract_and_sync_simple_embedding.py --song-id clocks_coldplay --clip-num 5 --cache-studio-embed --no-extract
     ```
 
   - Salta la extracción (ya hay WAV)
@@ -128,11 +128,11 @@ relativas funcionen (project-root/ en el esquema de arriba).
 
 3. **Recalcula y sobreescribe el embedding almacenado**
     ```bash
-    python sync.py --song-id clocks_coldplay --refresh-studio-embed --cache-studio-embed
+    python extract_and_sync_simple_embedding.py --song-id clocks_coldplay --refresh-studio-embed --cache-studio-embed
     ```
 4. **Otra canción, de la cual no se tiene cache**
     ```bash
-    python sync.py --song-id enemy_imagine_dragons --clip-num 7
+    python extract_and_sync_simple_embedding.py --song-id enemy_imagine_dragons --clip-num 7
     ```
 
 ## Créditos
