@@ -28,7 +28,7 @@ def extraer_audio(video_path, salida_path, sr=48000):
     print(f"✅ Guardado en: {salida_path}")
 
 """
-"clips_syntrack\me_porto_bonito_bad_bunny\cancion_estudio\me_porto_bonito_bad_bunny.mp3"
+"clips_syntrack\mai_milo_j\cancion_estudio\mai_milo_j.mp3"
 "clips_syntrack\pastel_con_nutella_ysy_a\cancion_estudio\pastel_con_nutella_ysy_a.mp3"
 "clips_syntrack\tu_me_dejaste_de_querer_c_tangana\cancion_estudio\tu_me_dejaste_de_querer_c_tangana.mp3"
 
