@@ -7,3 +7,9 @@ env/
 ~$etiquetado
 etiquetado
 etiquetado.xlsx
+
+# Modelos entrenados
+*.h5
+*.keras
+encoder_*.h5
+encoder_*.keras
